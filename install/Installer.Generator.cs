@@ -14,6 +14,7 @@ public static class Generator
     /// </summary>
     public static WixEntity[] GenerateWixEntities(IEnumerable<string> args)
     {
+        Console.WriteLine($"test: {args}");
         var versionRegex = new Regex(@"\d+");
         var versionStorages = new Dictionary<string, List<WixEntity>>();
 
