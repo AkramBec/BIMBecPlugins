@@ -24,6 +24,11 @@ public class ResultInfo
         ElementId = element.Id.IntegerValue;
         Category = element.Category?.Name ?? "Нет категории";
         SystemClassification = element.get_Parameter(BuiltInParameter.RBS_SYSTEM_NAME_PARAM).AsString();
+        
+        Guid nameGuid = new Guid("e6e0f5cd-3e26-485b-9342-23882b20eb43");
+        Guid designationGuid = new Guid("9c98831b-9450-412d-b072-7d69b39f4029");
+        Name = element.get_Parameter(nameGuid).AsString();
+        Designation = element.get_Parameter(designationGuid).AsString();
 
         if (documentTitle != "")
         {
